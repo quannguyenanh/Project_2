@@ -25,7 +25,7 @@ matcher = difflib.SequenceMatcher(None, l1, l2)
 if matcher != []:
 	f.write("Bien doi ngon lanh canh dao\n")
 
-for tag, i1, i2, j1, j2 in matcher.get_opcodes():#reversed(matcher.get_opcodes()):
+for tag, i1, i2, j1, j2 in reversed(matcher.get_opcodes()):
 
 	if tag == 'delete':
 		f.write('%s - xoa %s/%d -> ' % (list_2_str(l1), list_2_str(l1[i1:i2]), i2)),
