@@ -1,0 +1,13 @@
+import subprocess, zipfile, os
+
+z = zipfile.ZipFile('/tmp/upload/out.txt.zip')
+try:
+    f = z.open('out.txt', 'r', 'PASSWORD')
+    file('out.txt', 'wb').write(f.read())
+    #z.extractall('/tmp/view/', 'PASSWORD')
+    #for i in z.infolist():
+    #    file(i.filename,'wb').write(z.read(i.filename, 'PASSWORD'))
+except KeyError:
+    print 'Error: Did not find %s in zip file' % ('out.txt')
+finally:
+    z.close()

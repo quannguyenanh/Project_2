@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>Choose an option</h2>
+  {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+  <form action="{{ url_for('view_file') }}" method=post enctype=multipart/form-data>
+    <p><input type=file name=file>
+         <input type=submit value=View>
+    <form action="" method=post>
+    <dl>      
+      <dt>Password:
+      <dt><input type=password name=password>     
+    </dl>    
+  </form>
+{% endblock %}
